@@ -1,0 +1,218 @@
+.table {
+  position: relative;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+
+  .container {
+    margin-bottom: 20px;
+  }
+
+  .table-box__title {
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    color: $white-color;
+  }
+
+  .non {
+    color: $additional-red-color;
+  }
+
+  .сom {
+    color: $additional-green-color;
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    outline: none;
+    border: 0px solid transparent;
+    cursor: pointer;
+  }
+
+  .mask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 65%;
+    background-color: $primery-bg-color;
+    position: fixed;
+    top: 20%;
+    left: 0;
+    transition: 0.6s;
+    z-index: 8;
+    opacity: 1;
+  }
+
+  .loader {
+    width: 55px;
+    height: 55px;
+    border: 7px solid $labels-primary-color;
+    border-radius: 50%;
+    border-left-color: $current-bg-color;
+    animation: loader 1.3s linear infinite;
+  }
+
+  @keyframes loader {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .table__row {
+    padding: 6px 30px 4px 30px;
+    background-color: rgba(45, 51, 61, 1);
+    border-radius: 6px;
+
+    &:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+  }
+
+  .table__row--flex {
+    display: flex;
+
+    & p {
+      margin-left: 20px;
+    }
+
+    & p:first-child {
+      margin-left: 0;
+      margin-right: 140px;
+    }
+  }
+
+  #table-mob {
+    display: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    #thead-pc {
+      display: none;
+    }
+
+    #table-mob {
+      display: block;
+    }
+
+    .table__row {
+      display: none;
+      &:last-child {
+        display: none;
+      }
+    }
+
+    tbody {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      border: none;
+      border-spacing: 0 0;
+      margin-bottom: 40px;
+      background-color: $box-background-color;
+    }
+
+    td,
+    td,
+    tr,
+    th {
+      background-color: transparent;
+      border: none;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    .table-box__title,
+    .table-box__body {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      background-color: $box-background-color;
+    }
+
+    .table-box__body {
+      padding: 25px;
+    }
+  }
+
+  @media screen and (min-width: 767px) {
+    #table-mob {
+      display: block;
+    }
+
+    .table-box {
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      margin-top: -4px; /* correct offset on first border spacing if desired */
+      td,
+      th {
+        min-width: 100px;
+        border: solid 0px $primery-bg-color;
+        border-style: solid 0px transparent;
+        margin-bottom: 20px;
+      }
+
+      td:first-child,
+      th:first-child {
+        border-left-style: solid;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      td:last-child,
+      th:last-child {
+        border-right-style: solid;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      th {
+        background-color: rgba(45, 51, 61, 1);
+        &:nth-child(n + 5) {
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+
+      td {
+        &:nth-child(-n + 4) {
+          text-align-last: left;
+        }
+        &:nth-child(n + 5) {
+          text-align: right;
+        }
+      }
+
+      tr {
+        &:nth-child(even) {
+          background-color: rgba(36, 43, 53, 1);
+        }
+
+        &:nth-child(odd) {
+          background-color: rgba(30, 36, 47, 1);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 980px) {
+    th,
+    td {
+      padding: 10px;
+    }
+  }
+
+  @media screen and (min-width: 980px) {
+    th,
+    td {
+      padding: 12px 30px;
+    }
+  }
+}
