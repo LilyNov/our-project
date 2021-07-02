@@ -17,7 +17,7 @@
   padding-right: 60px;
 }
 
-.projects__title, .efficiency .efficiency__title {
+.card__title, .efficiency__title {
   text-align: center;
   font-weight: bold;
   line-height: 22px;
@@ -423,11 +423,11 @@ p {
   }
 }
 
-.information {
+.info {
   padding-top: 3.2rem;
 }
 
-.information__container {
+.info__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -438,7 +438,7 @@ p {
       flex-wrap: wrap;
 }
 
-.info {
+.card {
   position: relative;
   max-width: 648px;
   max-height: 606px;
@@ -447,17 +447,9 @@ p {
   border: 1px solid #3d444e;
   border-radius: 7px;
   margin-right: 2.4rem;
-  /* width */
-  /* Track */
-  /* Handle */
 }
 
-.info__wrapper {
-  max-height: 520px;
-  overflow: auto;
-}
-
-.info__title {
+.card__title {
   font-weight: bold;
   color: #fff;
   font-size: 1.6rem;
@@ -466,7 +458,7 @@ p {
   margin-bottom: 2.4rem;
 }
 
-.info__about {
+.card__about {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -476,149 +468,76 @@ p {
   margin-bottom: 1.6rem;
 }
 
-.info__about:last-child {
+.card__about:last-child {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
 
-.info__subtitle {
-  font-weight: 600;
-  color: #8f7fff;
-  font-size: 1.4rem;
-  width: 9rem;
-}
-
-.info__data {
+.card .info__text {
   margin-left: 4.5rem;
-  color: #b6b4c6;
-  font-size: 1.4rem;
-  line-height: 2.1rem;
-  max-width: 38.5rem;
-}
-
-.info__data span {
-  font-size: 1.2rem;
-  padding: 0.3rem 1.2rem;
-  border: 1px solid #6f68c6;
-  border-radius: 15px;
-}
-
-.info__data_red {
-  color: #ff6a59;
-}
-
-.info::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%) rotate(-180deg);
-          transform: translateY(-50%) rotate(-180deg);
-  width: 8px;
-  height: 55%;
-  background: linear-gradient(350.45deg, #bfbafa 15.3%, #624bff 87.74%, #8f7fff 87.74%, #7f76f7 87.74%);
-  border-radius: 7px 0px 0px 7px;
-}
-
-.info ::-webkit-scrollbar {
-  width: 8px;
-  background-color: #242b35;
-}
-
-.info ::-webkit-scrollbar-track {
-  border-radius: 7px;
-  height: 100px;
-}
-
-.info ::-webkit-scrollbar-thumb {
-  background: rgba(143, 127, 255, 0.15);
-  border-radius: 7px;
-}
-
-.info ::-webkit-scrollbar-corner {
-  background: #242b35;
+  width: 30%;
 }
 
 @media screen and (max-width: 576px) {
-  .info {
+  .card {
     width: 100%;
     padding: 3rem;
     margin-right: 0;
     margin-bottom: 2rem;
   }
-  .info__data {
+  .info__text {
     margin-left: 4.5rem;
     color: #b6b4c6;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
     max-width: 17.5rem;
   }
 }
 
-.projects {
+.info {
   padding-bottom: 24px;
   font-weight: 400;
   font-size: 10px;
   line-height: 18px;
 }
 
-.projects .list__secondary {
+.list__secondary {
   margin-left: 20px;
 }
 
-.projects .list__secondary > li {
+.list__secondary > li {
   border-bottom: 1px solid #3d444e;
 }
 
-.projects .list__main {
+.list__main {
   border-bottom: transparent;
 }
 
-.projects .list__main > li:not(:last-child) {
+.list__main > li:not(:last-child) {
   border-bottom: 1px solid #3d444e;
 }
 
-.projects .list__main--margin {
+.list__main--margin {
   margin-top: 40px;
 }
 
 @media screen and (min-width: 980px) {
-  .projects {
+  .info {
     font-size: 14px;
     line-height: 21px;
   }
-  .projects .container {
+  .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .projects .block--flex {
+  .block--flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .projects .projects__card {
-    width: calc(100% / 2);
-  }
-  .projects .projects__card:first-child {
-    margin-right: 24px;
-  }
 }
 
-.projects td {
-  display: inline-block;
-  vertical-align: top;
-  margin-bottom: 10px;
-}
-
-@media screen and (min-width: 980px) {
-  .projects td {
-    margin-bottom: 16px;
-  }
-}
-
-.projects li {
+li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -629,7 +548,7 @@ p {
   padding-bottom: 8px;
 }
 
-.projects .information__text--bg {
+.info__text--bg {
   position: relative;
   color: white;
   background-image: -webkit-gradient(linear, right top, left top, from(#544cba), to(#7b75cb));
@@ -637,82 +556,53 @@ p {
   padding: 3px 12px 3px 20px;
 }
 
-.projects .information__text--bg::before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 12px 12px 0 0;
-  border-color: #242b35 transparent transparent transparent;
-}
-
-.projects .information__text--bg::after {
-  position: absolute;
-  content: '';
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 12px 0 0 12px;
-  border-color: transparent transparent transparent #242b35;
-}
-
-.projects .information__text--bordered {
+.info__text--bordered {
   border: 1px solid #8f7fff;
   padding: 3px 12px;
   border-radius: 15px;
 }
 
-.projects .information__text--red {
+.info__text--red {
   color: #eb5757;
 }
 
-.projects__card {
+.card {
   padding: 34px 10px 34px 34px;
 }
 
-.projects__card:first-child {
+.card:first-child {
   margin-bottom: 24px;
   overflow: scroll;
 }
 
 @media screen and (min-width: 980px) {
-  .projects__card {
+  .card {
     padding: 40px 64px;
     height: 600px;
   }
 }
 
-.projects__title {
+.card__title {
   margin-bottom: 20px;
 }
 
 @media screen and (min-width: 980px) {
-  .projects__title {
+  .card__title {
     margin-bottom: 24px;
     font-size: 16px;
   }
 }
 
-.information__text--purple {
-  margin-right: 15px;
+.info__text--purple {
   font-weight: 600;
   color: #c7bfff;
   width: 65px;
 }
 
 @media screen and (min-width: 980px) {
-  .information__text--purple {
+  .info__text--purple {
     width: 155px;
   }
-}
-
-.information {
-  border-collapse: collapse;
 }
 
 .block:first-child {
@@ -755,11 +645,11 @@ p {
   line-height: 18px;
 }
 
-.efficiency .efficiency__card {
+.efficiency__card {
   padding: 40px 65px;
 }
 
-.efficiency .efficiency__title {
+.efficiency__title {
   margin-bottom: 24px;
 }
 
@@ -787,7 +677,7 @@ p {
     font-size: 14px;
     line-height: 21px;
   }
-  .efficiency .block--flex {
+  .block--flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

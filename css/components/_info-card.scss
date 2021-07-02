@@ -1,4 +1,4 @@
-.info {
+.card {
   position: relative;
   max-width: 648px;
   max-height: 606px;
@@ -8,10 +8,6 @@
   border-radius: 7px;
   margin-right: 2.4rem;
 
-  &__wrapper {
-    max-height: 520px;
-    overflow: auto;
-  }
   &__title {
     font-weight: bold;
     color: #fff;
@@ -29,86 +25,69 @@
       align-items: flex-start;
     }
   }
-  &__subtitle {
-    font-weight: 600;
-    color: $pink;
-    font-size: 1.4rem;
-    width: 9rem;
-  }
-  &__data {
+
+  .info__text {
     margin-left: 4.5rem;
-    color: $grey;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    max-width: 38.5rem;
-
-    span {
-      font-size: 1.2rem;
-      padding: 0.3rem 1.2rem;
-      border: 1px solid #6f68c6;
-      border-radius: 15px;
-    }
-    &_red {
-      color: #ff6a59;
-    }
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%) rotate(-180deg);
-    width: 8px;
-    height: 55%;
-    background: linear-gradient(
-      350.45deg,
-      #bfbafa 15.3%,
-      #624bff 87.74%,
-      #8f7fff 87.74%,
-      #7f76f7 87.74%
-    );
-    border-radius: 7px 0px 0px 7px;
+    //     color: $grey;
+    //     font-size: 1.4rem;
+    //     line-height: 2.1rem;
+    width: 30%;
   }
 
-  // scroll
+  //   &__data {
+  //     margin-left: 4.5rem;
+  //     color: $grey;
+  //     font-size: 1.4rem;
+  //     line-height: 2.1rem;
+  //     max-width: 38.5rem;
 
-  /* width */
-  ::-webkit-scrollbar {
-    width: 8px;
-    // height: 200px;
-    background-color: $box-background-color;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    border-radius: 7px;
-    height: 100px;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: $current-bg-color;
-    border-radius: 7px;
-  }
-
-  ::-webkit-scrollbar-corner {
-    background: $box-background-color;
-  }
+  //     span {
+  //       font-size: 1.2rem;
+  //       padding: 0.3rem 1.2rem;
+  //       border: 1px solid #6f68c6;
+  //       border-radius: 15px;
+  //     }
+  //     &_red {
+  //       color: #ff6a59;
+  //     }
+  //   }
+  //   &::before {
+  //     content: "";
+  //     position: absolute;
+  //     top: 50%;
+  //     left: 0;
+  //     transform: translateY(-50%) rotate(-180deg);
+  //     width: 8px;
+  //     height: 55%;
+  //     background: linear-gradient(
+  //       350.45deg,
+  //       #bfbafa 15.3%,
+  //       #624bff 87.74%,
+  //       #8f7fff 87.74%,
+  //       #7f76f7 87.74%
+  //     );
+  //     border-radius: 7px 0px 0px 7px;
+  //   }
 }
 
+// .wrapper {
+//   max-height: 520px;
+//   overflow: auto;
+// }
+
 @media screen and (max-width: 576px) {
-  .info {
+  .card {
     width: 100%;
     padding: 3rem;
     margin-right: 0;
     margin-bottom: 2rem;
+  }
 
-    &__data {
-      margin-left: 4.5rem;
-      color: $grey;
-      font-size: 1.4rem;
-      line-height: 2.1rem;
-      max-width: 17.5rem;
-    }
+  .info__text {
+    margin-left: 4.5rem;
+    color: $grey;
+    //   font-size: 1.4rem;
+    //   line-height: 2.1rem;
+    max-width: 17.5rem;
   }
 }
