@@ -56,7 +56,7 @@ p {
   width: calc((100% - 24px) / 2);
   max-height: 606px;
   margin-bottom: 24px;
-  padding: 34px 10px 34px 34px;
+  padding: 34px;
   background-color: #242b35;
   border: 1px solid #3d444e;
   border-radius: 7px;
@@ -509,6 +509,10 @@ p {
   width: 9rem;
 }
 
+.block {
+  width: calc((100% - 20px) / 2);
+}
+
 .block:first-child {
   margin-right: 20px;
 }
@@ -536,7 +540,7 @@ p {
     font-size: 16px;
   }
   .block {
-    width: calc(100% / 2);
+    width: calc((100% - 40px) / 2);
   }
   .block:first-child {
     margin-right: 40px;
@@ -545,6 +549,9 @@ p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
 }
 
