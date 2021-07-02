@@ -3,109 +3,118 @@
   font-weight: 400;
   font-size: 10px;
   line-height: 18px;
-}
 
-.list__secondary {
-  margin-left: 20px;
-}
-
-.list__secondary > li {
-  border-bottom: 1px solid $border-color;
-}
-
-.list__main {
-  border-bottom: transparent;
-}
-
-.list__main > li:not(:last-child) {
-  border-bottom: 1px solid $border-color;
-}
-
-.list__main--margin {
-  margin-top: 40px;
-}
-
-@media screen and (min-width: 980px) {
-  .projects {
-    font-size: 14px;
-    line-height: 21px;
-  }
-  .container {
-    display: flex;
-  }
-
-  .block--flex {
-    display: flex;
-  }
-
-  .card {
-    width: calc(100% / 2);
-
-    &:first-child {
-      margin-right: 24px;
+  .list__secondary {
+    margin-left: 20px;
+    & > li {
+      border-bottom: 1px solid $border-color;
     }
   }
+
+  .list__main {
+    border-bottom: transparent;
+    & > li:not(:last-child) {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  .list__main--margin {
+    margin-top: 40px;
+  }
+
+  @media screen and (min-width: 980px) {
+    font-size: 14px;
+    line-height: 21px;
+    .container {
+      display: flex;
+    }
+
+    .block--flex {
+      display: flex;
+    }
+
+    .projects__card {
+      width: calc(100% / 2);
+
+      &:first-child {
+        margin-right: 24px;
+      }
+    }
+  }
+
+  td {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px;
+    @media screen and (min-width: 980px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .information__text--bg {
+    position: relative;
+    color: $white-color;
+    background-image: linear-gradient(270deg, #544cba 0%, #7b75cb 100%);
+    padding: 3px 12px 3px 20px;
+  }
+
+  .information__text--bg::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 12px 0 0;
+    border-color: $box-background-color transparent transparent transparent;
+  }
+
+  .information__text--bg::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 0 0 12px;
+    border-color: transparent transparent transparent $box-background-color;
+  }
+
+  .information__text--bordered {
+    border: 1px solid $labels-primary-color;
+    padding: 3px 12px;
+    border-radius: 15px;
+  }
+
+  .information__text--red {
+    color: $additional-red-color;
+  }
 }
 
-li {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.information__text--bg {
-  position: relative;
-  color: $white-color;
-  background-image: linear-gradient(270deg, #544cba 0%, #7b75cb 100%);
-  padding: 3px 12px 3px 20px;
-}
-
-.information__text--bg::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 12px 12px 0 0;
-  border-color: $box-background-color transparent transparent transparent;
-}
-
-.information__text--bg::after {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 12px 0 0 12px;
-  border-color: transparent transparent transparent $box-background-color;
-}
-
-.information__text--bordered {
-  border: 1px solid $labels-primary-color;
-  padding: 3px 12px;
-  border-radius: 15px;
-}
-
-.information__text--red {
-  color: $additional-red-color;
-}
-
-.card {
+.projects__card {
   padding: 34px 10px 34px 34px;
-  max-height: 520px;
+  // height: 600px;
+
+  &:first-child {
+    margin-bottom: 24px;
+    overflow: scroll;
+  }
+  @media screen and (min-width: 980px) {
+    padding: 40px 64px;
+    height: 600px;
+  }
 }
 
-.card:first-child {
-  margin-bottom: 24px;
-  overflow: scroll;
-}
-
-.title {
+.projects__title {
   margin-bottom: 20px;
   @extend %title;
   @media screen and (min-width: 980px) {
@@ -131,6 +140,10 @@ li {
 .block {
   &:first-child {
     margin-right: 20px;
+    @media screen and (min-width: 980px) {
+      width: calc(100% / 2);
+      margin-right: 40px;
+    }
   }
 }
 
@@ -157,32 +170,4 @@ li {
 
 ::-webkit-scrollbar-corner {
   background: $box-background-color;
-}
-
-@media screen and (max-width: 576px) {
-  .card {
-    width: 100%;
-    padding: 3rem;
-    margin-right: 0;
-    margin-bottom: 2rem;
-  }
-
-  .info__data {
-    margin-left: 4.5rem;
-    // color: $grey;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    max-width: 17.5rem;
-  }
-}
-
-@media screen and (min-width: 980px) {
-  .card {
-    padding: 40px 64px;
-    min-height: 600px;
-  }
-  .block:first-child {
-    width: calc(100% / 2);
-    margin-right: 40px;
-  }
 }
