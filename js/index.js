@@ -7,7 +7,7 @@ dataFromApiService();
 // API
 function dataFromApiService() {
   const BASE_URL =
-    "https://gist.githubusercontent.com/LilyNov/4b2e78776268f66201c7452e7246f73c/raw/2486806b6c1c4efcbd89674699b098601dc78394/table.json";
+    "https://gist.githubusercontent.com/LilyNov/23f9788f6e158e9d61e60b40c1b7086c/raw/ec4490cf35e4c6cdd9e1f6f3b46bfd4efc213240/bd.json";
 
   apiService(BASE_URL)
     .then((data) => renderTable(data))
@@ -15,7 +15,7 @@ function dataFromApiService() {
 }
 
 function renderTable(data) {
-  console.log(data);
+  console.log(data); //posts
 }
 
 // burger menu
