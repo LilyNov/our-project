@@ -1,79 +1,24 @@
-.card {
-  position: relative;
-  max-width: 648px;
-  max-height: 606px;
-  padding: 4rem;
-  background: $bg;
-  border: 1px solid #3d444e;
-  border-radius: 7px;
-  margin-right: 2.4rem;
-
-  &__title {
-    font-weight: bold;
-    color: #fff;
-    font-size: 1.6rem;
-    text-transform: capitalize;
-    text-align: center;
-    margin-bottom: 2.4rem;
-  }
-
-  &__about {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.6rem;
-    &:last-child {
-      align-items: flex-start;
-    }
-  }
-
-  .info__text {
-    margin-left: 4.5rem;
-    //     color: $grey;
-    //     font-size: 1.4rem;
-    //     line-height: 2.1rem;
-    width: 30%;
-  }
-
-  //   &__data {
-  //     margin-left: 4.5rem;
-  //     color: $grey;
-  //     font-size: 1.4rem;
-  //     line-height: 2.1rem;
-  //     max-width: 38.5rem;
-
-  //     span {
-  //       font-size: 1.2rem;
-  //       padding: 0.3rem 1.2rem;
-  //       border: 1px solid #6f68c6;
-  //       border-radius: 15px;
-  //     }
-  //     &_red {
-  //       color: #ff6a59;
-  //     }
-  //   }
-  //   &::before {
-  //     content: "";
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 0;
-  //     transform: translateY(-50%) rotate(-180deg);
-  //     width: 8px;
-  //     height: 55%;
-  //     background: linear-gradient(
-  //       350.45deg,
-  //       #bfbafa 15.3%,
-  //       #624bff 87.74%,
-  //       #8f7fff 87.74%,
-  //       #7f76f7 87.74%
-  //     );
-  //     border-radius: 7px 0px 0px 7px;
-  //   }
+.info__title {
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 2.4rem;
 }
 
-// .wrapper {
-//   max-height: 520px;
-//   overflow: auto;
-// }
+.info__about {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  &:last-child {
+    align-items: flex-start;
+  }
+}
+
+.info__text:last-child {
+  width: 70%;
+}
 
 @media screen and (max-width: 576px) {
   .card {
@@ -86,8 +31,6 @@
   .info__text {
     margin-left: 4.5rem;
     color: $grey;
-    //   font-size: 1.4rem;
-    //   line-height: 2.1rem;
     max-width: 17.5rem;
   }
 }

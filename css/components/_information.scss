@@ -1,9 +1,131 @@
-.info {
-  padding-top: 3.2rem;
+.info__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.info {
+  padding-bottom: 24px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 18px;
+}
+
+.list__secondary {
+  margin-left: 20px;
+  & > li {
+    border-bottom: 1px solid $border-color;
   }
+}
+
+.list__main {
+  border-bottom: transparent;
+  & > li:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.list__main--margin {
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 980px) {
+  .info {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .block--flex {
+    display: flex;
+  }
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.info__text--bg {
+  position: relative;
+  color: $white-color;
+  background-image: linear-gradient(270deg, #544cba 0%, #7b75cb 100%);
+  padding: 3px 12px 3px 20px;
+}
+
+.info__text--bordered {
+  border: 1px solid $labels-primary-color;
+  padding: 3px 12px;
+  border-radius: 15px;
+}
+
+.info__text--red {
+  color: $additional-red-color;
+}
+
+.card:first-child {
+  margin-right: 24px;
+  margin-bottom: 24px;
+  overflow: scroll;
+}
+
+.card__title {
+  margin-bottom: 20px;
+  @extend %title;
+}
+
+.info__text--purple {
+  font-weight: 600;
+  color: $labels-text-color;
+  width: 9rem;
+}
+
+.block {
+  &:first-child {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .card {
+    padding: 40px 64px;
+  }
+
+  .card__title {
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+
+  .block {
+    width: calc(100% / 2);
+    &:first-child {
+      margin-right: 40px;
+    }
+  }
+}
+
+// scroll
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  // height: 200px;
+  background-color: $box-background-color;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 7px;
+  height: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $current-bg-color;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-corner {
+  background: $box-background-color;
 }
