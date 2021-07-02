@@ -38,6 +38,7 @@ p {
   position: relative;
   width: calc((100% - 24px) / 2);
   max-height: 606px;
+  margin-bottom: 24px;
   padding: 34px 10px 34px 34px;
   background-color: $box-background-color;
   border: 1px solid $border-color;
@@ -70,4 +71,11 @@ p {
 
 .list__text--bold {
   font-weight: 600;
+}
+
+@media screen and (max-width: 980px) {
+  .card {
+    min-width: 100%;
+    min-height: auto;
+  }
 }
