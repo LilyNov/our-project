@@ -1,5 +1,5 @@
 import refs from "./refs.js";
-import apiService from "./apiService.js";
+import getPosts from "./apiService.js";
 import { tableMarkup, pagiBtnsMarkup } from "./markup.js";
 
 const strInTable = 10;
@@ -12,7 +12,7 @@ getDataFromApiService(BASE_URL);
 
 // API
 function getDataFromApiService() {
-  apiService(BASE_URL)
+  getPosts(BASE_URL)
     .then((data) => {
       posts = data.posts;
       renderTable(strInTable, 1);
@@ -39,6 +39,31 @@ function sortTable(col) {
   renderTable(strInTable, 1);
 }
 
+refs.sortTable.forEach((sortItem) => {
+  sortItem.addEventListener("click", () => {
+    let sortValue;
+
+    switch (sortItem.id) {
+      case "estimation":
+        sortValue = "estimation";
+        break;
+      case "totalTime":
+        sortValue = "totalTimeSpentByAll";
+        break;
+      case "spentTime":
+        sortValue = "myTimeSpentByPeriod";
+        break;
+      case "efficiency":
+        sortValue = "efficiency";
+        break;
+
+      default:
+        break;
+    }
+    sortTable(sortValue);
+  });
+});
+
 function renderPagiButtons(page) {
   refs.pages.innerHTML = pagiBtnsMarkup;
   const prevBtn = document.querySelector(".prev");
@@ -48,7 +73,7 @@ function renderPagiButtons(page) {
 
   const blockPagiBtns = document.querySelector(".table__pagination_buttons");
 
-  for (let i = 0; i < Math.ceil(posts.length / strInTable); i++) {
+  for (let i = 0; i < Math.ceil(posts.length / 10); i++) {
     blockPagiBtns.insertAdjacentHTML(
       "beforeend",
       `
@@ -74,29 +99,21 @@ function renderPagiButtons(page) {
     btn.addEventListener("click", () => {
       pagiBtns.forEach((btn) => btn.classList.remove("active"));
       btn.classList.add("active");
-      renderTable(strInTable, +btn.textContent);
+      renderTable(10, +btn.textContent);
       renderPagiButtons(+btn.textContent - 1);
     });
   });
 
   nextBtn.addEventListener("click", () => {
-    renderTable(strInTable, page + 2);
+    renderTable(10, page + 2);
     renderPagiButtons(page + 1);
   });
 
   prevBtn.addEventListener("click", () => {
-    renderTable(strInTable, page);
+    renderTable(10, page);
     renderPagiButtons(page - 1);
   });
 }
-
-refs.sortTable.forEach((sortItem) => {
-  console.log(sortItem.id);
-  sortItem.addEventListener("click", () => {
-    sortTable(sortItem.id);
-    console.log("click sort");
-  });
-});
 
 // refs.estimation.addEventListener("click", () => {
 //   sortTable("estimation");
@@ -113,7 +130,6 @@ refs.sortTable.forEach((sortItem) => {
 
 // burger menu
 function onBurgerMenuClick() {
-  console.log("click");
   document.body.classList.toggle("lock");
   refs.iconMenu.classList.toggle("active");
   refs.nav.classList.toggle("active");

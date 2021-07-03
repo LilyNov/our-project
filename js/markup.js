@@ -10,9 +10,9 @@ export const tableMarkup = (elem) => {
           <div class="table__row_worktype row-item" data-label="Work Type">
               ${elem.workType}<br>
           </div>
-          <div class="table__row_status row-item completed" data-label="Status">${
-            elem.status
-          }</div>
+          <div class="table__row_status row-item  ${
+            elem.status === "Completed" ? "completed" : "nonCompleted"
+          }" data-label="Status">${elem.status}</div>
           <div class="table__row_estimation row-item" data-label="Estimation (h)" >${
             elem.estimation
           }</div>
@@ -22,7 +22,7 @@ export const tableMarkup = (elem) => {
           <div class="table__row_spenttime row-item" data-label="My Time spent by Period (h)">${
             elem.myTimeSpentByPeriod
           }</div>
-          <div class="table__row_efficiency row-item" data-label="Efficiency>${
+          <div class="table__row_efficiency row-item" data-label="Efficiency"> ${
             elem.efficiency ? elem.efficiency + "%" : "-"
           }</div>
       </div>
@@ -30,8 +30,7 @@ export const tableMarkup = (elem) => {
   return markup;
 };
 
-export const pagiBtnsMarkup = () => {
-  let markup = `
+export const pagiBtnsMarkup = `
       <button class="prev">
       <svg class="pagination__button-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +38,7 @@ export const pagiBtnsMarkup = () => {
           </svg>
       </button>
 
-      <ul class="table__pagination_buttons">
+      <ul class="list table__pagination_buttons">
           
       </ul>
 
@@ -50,5 +49,5 @@ export const pagiBtnsMarkup = () => {
           </svg>
       </button>
   `;
-  return markup;
-};
+
+export const loaderMarkup = `<div class="mask"><div class="loader"></div></div>`;

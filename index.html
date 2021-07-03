@@ -322,12 +322,11 @@
                         <div class="table__header_title">Task name </div>
                         <div class="table__header_title">Developer </div>
                         <div class="table__header_title">Work Type </div>
-                        <div class="table__header_title">Status </div>
-                        <div class="table__header_title" id="estimation" data-sort>Estimation (h) </div>
-                        <div class="table__header_title" id="totalTime" data-sort>Total time spent <br>
-                            by All </div>
-                        <div class="table__header_title" id="spentTime" data-sort>My Time spent by Period (h) </div>
-                        <div class="table__header_title" id="efficiency" data-sort>Efficiency </div>
+                        <div class="table__header_title">Status</div>
+                        <div class="table__header_title" id="estimation" data-sort>Estimation (h) <img src="./img/icons/sort.png" alt="sort"></div>
+                        <div class="table__header_title" id="totalTime" data-sort>Total time spent by All <img src="./img/icons/sort.png" alt="sort"></div>
+                        <div class="table__header_title" id="spentTime" data-sort>My Time spent by Period (h) <img src="./img/icons/sort.png" alt="sort"></div>
+                        <div class="table__header_title" id="efficiency" data-sort>Efficiency <img src="./img/icons/sort.png" alt="sort"></div>
                     </div>
                     <!-- /.table__header -->
         
@@ -336,23 +335,27 @@
                     <div class="divider"></div>
         
                     <div class="table__sum">
-                        <div class="table__sum_value">Sum</div>
-                        <div class="table__sum_totaltime">2078h</div>
-                        <div class="table__sum_spenttime">1090h</div>
-                        <div class="table__sum_efficiency">100% (1090h)</div>
+                        <p>Sum</p>
+                        <div class="table__sum--flex">
+                            <p>2078h</p>
+                            <p>1090h</p>
+                            <p>100% (1090h)</p>
+                        </div>
                     </div>
                 </div>
         
                 <div class="table__pagination">
                     <div class="table__pagination_text">Rows per page</div>
-                    <select name="rows">
-                        <option value="10" selected>10</option>
-                        <option value="9">9</option>
-                        <option value="8">8</option>
-                        <option value="7">7</option>
-                        <option value="6">6</option>
-                        <option value="5">5</option>
-                    </select>
+                    <div class="select__wrapper">
+                        <select name="rows" class="select__box">
+                            <option value="10" selected>10</option>
+                            <option value="9">9</option>
+                            <option value="8">8</option>
+                            <option value="7">7</option>
+                            <option value="6">6</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
                     <div class="table__pagination_pages">1-10 of 20</div>
         
                     <div class="table__pagination_wrapper" data-pagination>
@@ -370,6 +373,7 @@
         </div>
     </footer>
     <script src="js/index.js" type="module"></script>
+    <!-- <script src="indexjs.js" type="module"></script> -->
 </body>
 
 </html>
