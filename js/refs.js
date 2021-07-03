@@ -4,10 +4,6 @@ const refs = {
   navLink: document.querySelectorAll(".nav__link"),
   tableBody: document.querySelector("[data-table]"),
   pages: document.querySelector("[data-pagination]"),
-  //   estimation,
-  //   totalTime,
-  //   spentTime,
-  // efficiency,
   sortTable: document.querySelectorAll("[data-sort]"),
 };
 

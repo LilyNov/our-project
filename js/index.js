@@ -1,6 +1,6 @@
 import refs from "./refs.js";
 import getPosts from "./apiService.js";
-import { tableMarkup, pagiBtnsMarkup } from "./markup.js";
+import { tableMarkup, pagiBtnsMarkup, loaderMarkup } from "./markup.js";
 
 const strInTable = 10;
 let posts = null;
@@ -99,20 +99,45 @@ function renderPagiButtons(page) {
     btn.addEventListener("click", () => {
       pagiBtns.forEach((btn) => btn.classList.remove("active"));
       btn.classList.add("active");
-      renderTable(10, +btn.textContent);
+      addLoader();
+      setTimeout(() => {
+        renderTable(10, +btn.textContent);
+        removeLoader();
+      }, 500);
       renderPagiButtons(+btn.textContent - 1);
     });
   });
 
   nextBtn.addEventListener("click", () => {
-    renderTable(10, page + 2);
+    addLoader();
+    setTimeout(() => {
+      renderTable(10, page + 2);
+      removeLoader();
+    }, 500);
     renderPagiButtons(page + 1);
   });
 
   prevBtn.addEventListener("click", () => {
-    renderTable(10, page);
+    addLoader();
+    setTimeout(() => {
+      renderTable(10, page);
+      removeLoader();
+    }, 500);
     renderPagiButtons(page - 1);
   });
+}
+
+function addLoader() {
+  refs.tableBody.innerHTML = "";
+  refs.tableBody.style.opacity = 0;
+  refs.tableBody.insertAdjacentHTML("beforebegin", loaderMarkup);
+  const loader = document.querySelector(".mask");
+}
+
+function removeLoader() {
+  const loader = document.querySelector(".mask");
+  loader.remove();
+  refs.tableBody.style.opacity = 1;
 }
 
 // refs.estimation.addEventListener("click", () => {

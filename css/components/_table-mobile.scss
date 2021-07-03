@@ -1,8 +1,7 @@
-.table__header {
-  display: none;
-}
-
 @media screen and (max-width: 980px) {
+  .table__header {
+    display: none;
+  }
   .table__body {
     width: 50%;
     margin-left: auto;
@@ -22,10 +21,6 @@
 }
 
 @media screen and (min-width: 980px) {
-  .table__header {
-    display: block;
-  }
-
   .table__row {
     display: flex;
     align-items: center;
