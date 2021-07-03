@@ -1,0 +1,33 @@
+.table__header {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .table__body {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .row-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .row-item::before {
+    content: attr(data-label);
+    display: flex;
+    color: #b6b4c6;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .table__header {
+    display: block;
+  }
+
+  .table__row {
+    display: flex;
+    align-items: center;
+  }
+}

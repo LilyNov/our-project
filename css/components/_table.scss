@@ -70,8 +70,6 @@
 }
 
 .table__row {
-  display: flex;
-  align-items: center;
   color: $grey;
   border-radius: 7px;
   background: #242b35;
@@ -105,6 +103,7 @@
 }
 .table__row_estimation {
   width: 13.1rem;
+  padding: 12px 30px;
   text-align: end;
 }
 .table__row_totaltime {

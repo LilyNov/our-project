@@ -775,12 +775,6 @@ p {
 }
 
 .table__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   color: #b6b4c6;
   border-radius: 7px;
   background: #242b35;
@@ -820,6 +814,7 @@ p {
 
 .table__row_estimation {
   width: 13.1rem;
+  padding: 12px 30px;
   text-align: end;
 }
 
@@ -1049,6 +1044,51 @@ p {
   .table__card_info {
     width: 8rem;
     text-align: center;
+  }
+}
+
+.table__header {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .table__body {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .row-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+  .row-item::before {
+    content: attr(data-label);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #b6b4c6;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .table__header {
+    display: block;
+  }
+  .table__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
