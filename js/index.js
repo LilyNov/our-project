@@ -128,10 +128,9 @@ function renderPagiButtons(page) {
 }
 
 function addLoader() {
-  refs.tableBody.innerHTML = "";
+  refs.tableBody.textContent = "";
   refs.tableBody.style.opacity = 0;
   refs.tableBody.insertAdjacentHTML("beforebegin", loaderMarkup);
-  const loader = document.querySelector(".mask");
 }
 
 function removeLoader() {
