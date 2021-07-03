@@ -8,10 +8,10 @@ const BASE_URL =
   "https://gist.githubusercontent.com/LilyNov/23f9788f6e158e9d61e60b40c1b7086c/raw/ec4490cf35e4c6cdd9e1f6f3b46bfd4efc213240/bd.json";
 
 refs.iconMenu.addEventListener("click", onBurgerMenuClick);
-getDataFromApiService(BASE_URL);
+window.addEventListener("load", getDataFromApiService);
 
 // API
-function getDataFromApiService() {
+function getDataFromApiService(BASE_URL) {
   getPosts(BASE_URL)
     .then((data) => {
       posts = data.posts;
@@ -24,14 +24,15 @@ function getDataFromApiService() {
 function renderTable(rows, pages) {
   refs.tableBody.innerHTML = "";
   for (let i = rows * (pages - 1); i < rows * pages; i++) {
-    const elem = posts[i];
-    if (!elem) return;
-    const markup = tableMarkup(elem);
+    const post = posts[i];
+    if (!post) return;
+    const markup = tableMarkup(post);
 
     refs.tableBody.insertAdjacentHTML("beforeend", markup);
   }
 }
 
+// sort
 function sortTable(col) {
   posts.sort((a, b) => {
     return b[col] - a[col];
@@ -64,6 +65,7 @@ refs.sortTable.forEach((sortItem) => {
   });
 });
 
+// pagination
 function renderPagiButtons(page) {
   refs.pages.innerHTML = pagiBtnsMarkup;
   const prevBtn = document.querySelector(".prev");
@@ -127,6 +129,7 @@ function renderPagiButtons(page) {
   });
 }
 
+// loader
 function addLoader() {
   refs.tableBody.textContent = "";
   refs.tableBody.style.opacity = 0;
@@ -138,19 +141,6 @@ function removeLoader() {
   loader.remove();
   refs.tableBody.style.opacity = 1;
 }
-
-// refs.estimation.addEventListener("click", () => {
-//   sortTable("estimation");
-// });
-// refs.totalTime.addEventListener("click", () => {
-//   sortTable("totalTimeSpentByAll");
-// });
-// refs.spentTime.addEventListener("click", () => {
-//   sortTable("myTimeSpentByPeriod");
-// });
-// refs.efficiency.addEventListener("click", () => {
-//   sortTable("efficiency");
-// });
 
 // burger menu
 function onBurgerMenuClick() {

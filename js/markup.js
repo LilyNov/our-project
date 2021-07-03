@@ -1,29 +1,29 @@
-export const tableMarkup = (elem) => {
+export const tableMarkup = (post) => {
   let markup = `
       <div class="table__row">
           <div class="table__row_taskname row-item" data-label="Task name">${
-            elem.taskName
+            post.taskName
           }</div>
           <div class="table__row_developer row-item" data-label="Developer">
-              ${elem.developer}
+              ${post.developer}
           </div>
           <div class="table__row_worktype row-item" data-label="Work Type">
-              ${elem.workType}<br>
+              ${post.workType}<br>
           </div>
           <div class="table__row_status row-item  ${
-            elem.status === "Completed" ? "completed" : "nonCompleted"
-          }" data-label="Status">${elem.status}</div>
+            post.status === "Completed" ? "completed" : "nonCompleted"
+          }" data-label="Status">${post.status}</div>
           <div class="table__row_estimation row-item" data-label="Estimation (h)" >${
-            elem.estimation
+            post.estimation
           }</div>
           <div class="table__row_totaltime row-item" data-label="Total time spent by All">${
-            elem.totalTimeSpentByAll
+            post.totalTimeSpentByAll
           }</div>
           <div class="table__row_spenttime row-item" data-label="My Time spent by Period (h)">${
-            elem.myTimeSpentByPeriod
+            post.myTimeSpentByPeriod
           }</div>
           <div class="table__row_efficiency row-item" data-label="Efficiency"> ${
-            elem.efficiency ? elem.efficiency + "%" : "-"
+            post.efficiency ? post.efficiency + "%" : "-"
           }</div>
       </div>
       `;

@@ -1048,7 +1048,9 @@ p {
 }
 
 @media screen and (max-width: 980px) {
-  .table__header {
+  .table__header,
+  .divider,
+  .table__sum {
     display: none;
   }
   .table__body {
