@@ -23,13 +23,14 @@
 @media screen and (max-width: 576px) {
   .card {
     width: 100%;
-    padding: 3rem;
+    padding: 1.5rem;
     margin-right: 0;
     margin-bottom: 2rem;
+    overflow: auto;
   }
 
   .info__text {
-    margin-left: 4.5rem;
+    margin-left: 1rem;
     color: $grey;
     max-width: 17.5rem;
   }

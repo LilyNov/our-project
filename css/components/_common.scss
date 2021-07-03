@@ -77,5 +77,19 @@ p {
   .card {
     min-width: 100%;
     min-height: auto;
+
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .card {
+    min-width: 100%;
+    min-height: auto;
+    width: 90%;
+    padding: 0;
+  }
+
+  .container {
+    padding: 20px;
   }
 }

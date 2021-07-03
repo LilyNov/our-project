@@ -91,6 +91,18 @@ p {
   }
 }
 
+@media screen and (max-width: 575px) {
+  .card {
+    min-width: 100%;
+    min-height: auto;
+    width: 90%;
+    padding: 0;
+  }
+  .container {
+    padding: 20px;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -577,6 +589,12 @@ p {
   background: #242b35;
 }
 
+@media screen and (max-width: 980px) {
+  .block {
+    width: 100%;
+  }
+}
+
 .info__title {
   font-weight: bold;
   color: #fff;
@@ -609,12 +627,13 @@ p {
 @media screen and (max-width: 576px) {
   .card {
     width: 100%;
-    padding: 3rem;
+    padding: 1.5rem;
     margin-right: 0;
     margin-bottom: 2rem;
+    overflow: auto;
   }
   .info__text {
-    margin-left: 4.5rem;
+    margin-left: 1rem;
     color: #b6b4c6;
     max-width: 17.5rem;
   }
@@ -675,10 +694,6 @@ p {
   font-size: 12px;
   line-height: 18px;
   font-weight: normal;
-}
-
-.table__wrapper.mobile {
-  display: none;
 }
 
 .table__header {
@@ -899,10 +914,6 @@ p {
   padding: 10px 12px;
 }
 
-.select__wrapper::after {
-  left: 35px;
-}
-
 .table__pagination select {
   position: relative;
   padding: 1rem 2.8rem 1rem 0.8rem;
@@ -913,9 +924,10 @@ p {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  background-image: url("../img/icons/chevron-down.png");
   background-repeat: no-repeat, repeat;
   background-position: right 0.7em top 50%, 0 0;
-  background-size: 1.6rem auto, 100%;
+  background-size: 1.2rem auto, 100%;
   outline: none;
   cursor: pointer;
   margin-right: 1.2rem;
@@ -1011,50 +1023,33 @@ p {
 
 @media screen and (max-width: 576px) {
   .table {
-    padding: 4rem 0;
+    padding: 0;
+    padding-bottom: 0;
   }
-  .table__wrapper {
-    display: none;
-  }
-  .table__wrapper.mobile {
-    display: block;
-  }
-  .table__card {
-    padding: 2rem;
-    background: #242b35;
-    border-radius: 7px;
-    margin-bottom: 2rem;
-  }
-  .table__card_item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .table__sum--flex {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    color: #b6b4c6;
-    margin-top: 1.5rem;
   }
-  .table__card_title {
-    width: 10rem;
+  .table__sum--flex p {
+    margin-left: 20px;
   }
-  .table__card_info {
-    width: 8rem;
-    text-align: center;
+  .table__sum--flex p:first-child {
+    margin-left: 0;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .table__pagination {
+    display: none;
   }
 }
 
 @media screen and (max-width: 980px) {
-  .table__header,
-  .divider,
-  .table__sum {
+  .table__header {
     display: none;
   }
   .table__body {
-    width: 50%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1156,6 +1151,12 @@ p {
   .footer {
     font-size: 14px;
     line-height: 21px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding-top: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */

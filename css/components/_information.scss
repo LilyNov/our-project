@@ -77,6 +77,8 @@
     line-height: 21px;
   }
 
+  
+
   .info__container {
     display: flex;
     justify-content: space-between;
@@ -127,4 +129,10 @@
 
 ::-webkit-scrollbar-corner {
   background: $box-background-color;
+}
+
+@media screen and (max-width: 980px) { 
+  .block {
+    width: 100%;
+  }
 }

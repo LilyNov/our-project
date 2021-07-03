@@ -8,10 +8,10 @@ const BASE_URL =
   "https://gist.githubusercontent.com/LilyNov/23f9788f6e158e9d61e60b40c1b7086c/raw/ec4490cf35e4c6cdd9e1f6f3b46bfd4efc213240/bd.json";
 
 refs.iconMenu.addEventListener("click", onBurgerMenuClick);
-window.addEventListener("load", getDataFromApiService);
+getDataFromApiService(BASE_URL);
 
 // API
-function getDataFromApiService(BASE_URL) {
+function getDataFromApiService() {
   getPosts(BASE_URL)
     .then((data) => {
       posts = data.posts;

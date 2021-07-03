@@ -10,9 +10,17 @@
   span {
     color: $labels-primary-color;
   }
+}
 
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .footer {
     font-size: 14px;
     line-height: 21px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding-top: 0;
   }
 }
