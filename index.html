@@ -315,6 +315,53 @@
 </section>
 
         <!-- table -->
+        <section class="table">
+            <div class="container">
+                <div class="table__wrapper">
+                    <div class="table__header">
+                        <div class="table__header_title">Task name </div>
+                        <div class="table__header_title">Developer </div>
+                        <div class="table__header_title">Work Type </div>
+                        <div class="table__header_title">Status </div>
+                        <div class="table__header_title" id="estimation" data-sort>Estimation (h) </div>
+                        <div class="table__header_title" id="totalTime" data-sort>Total time spent <br>
+                            by All </div>
+                        <div class="table__header_title" id="spentTime" data-sort>My Time spent by Period (h) </div>
+                        <div class="table__header_title" id="efficiency" data-sort>Efficiency </div>
+                    </div>
+                    <!-- /.table__header -->
+        
+                    <div class="table__body" data-table></div>
+        
+                    <div class="divider"></div>
+        
+                    <div class="table__sum">
+                        <div class="table__sum_value">Sum</div>
+                        <div class="table__sum_totaltime">2078h</div>
+                        <div class="table__sum_spenttime">1090h</div>
+                        <div class="table__sum_efficiency">100% (1090h)</div>
+                    </div>
+                </div>
+        
+                <div class="table__pagination">
+                    <div class="table__pagination_text">Rows per page</div>
+                    <select name="rows">
+                        <option value="10" selected>10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                    </select>
+                    <div class="table__pagination_pages">1-10 of 20</div>
+        
+                    <div class="table__pagination_wrapper" data-pagination>
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.table -->
 
     </main>
     <footer class="footer">
